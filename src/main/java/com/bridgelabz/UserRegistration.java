@@ -83,4 +83,19 @@ public class UserRegistration {
         else
             System.out.println("Password is not valid");
     }
+
+    //For User's password - Rule 2nd
+    public static void validPasswordRule2() {
+        System.out.println("Enter The Password At least Eight Character with one Upper case: ");
+        String password = sc.nextLine();
+        String regex5 = "^[A-Z]{1}+[a-z 0-9]{7,}$";
+        Pattern pattern5 = Pattern.compile(regex5);
+        Matcher matcher5 = pattern5.matcher(password);
+        boolean r = matcher5.matches();
+
+        if (r)
+            System.out.println("Password is valid");
+        else
+            System.out.println("Password is not valid");
+    }
 }
