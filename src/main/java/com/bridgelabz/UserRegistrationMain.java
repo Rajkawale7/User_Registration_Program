@@ -11,6 +11,7 @@ public class UserRegistrationMain {
         System.out.println("Enter 4 : to validate User Mobile Number ");
         System.out.println("Enter 5 : to validate User Password as per given Rule 1 ");
         System.out.println("Enter 6 : to validate User Password as per given Rule 2 ");
+        System.out.println("Enter 7 : to validate User Password as per given Rule 3 ");
 
         switch (scanner.nextInt()) {
             case 1:
@@ -33,6 +34,10 @@ public class UserRegistrationMain {
 
             case 6 :
                 UserRegistration.validPasswordRule2();
+                break;
+
+            case 7 :
+                UserRegistration.validPasswordRule3();
                 break;
 
             default:
