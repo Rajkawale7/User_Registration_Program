@@ -68,4 +68,19 @@ public class UserRegistration {
         else
             System.out.println("Mobile Number is not valid.");
     }
+
+    //For User's password - Rule 1st
+    public static void validPasswordRule1(){
+        System.out.println("Enter Your Password :  ");
+        String password = sc.nextLine();
+        String regex4 = "^[A-Z a-z 0-9]{8,}$";
+        Pattern pattern4 = Pattern.compile(regex4);
+        Matcher matcher4 = pattern4.matcher(password);
+        boolean r = matcher4.matches();
+
+        if (r)
+            System.out.println("Password is valid");
+        else
+            System.out.println("Password is not valid");
+    }
 }
