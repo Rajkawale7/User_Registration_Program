@@ -12,6 +12,7 @@ public class UserRegistrationMain {
         System.out.println("Enter 5 : to validate User Password as per given Rule 1 ");
         System.out.println("Enter 6 : to validate User Password as per given Rule 2 ");
         System.out.println("Enter 7 : to validate User Password as per given Rule 3 ");
+        System.out.println("Enter 8 : to validate User Password as per given Rule 4 ");
 
         switch (scanner.nextInt()) {
             case 1:
@@ -38,6 +39,10 @@ public class UserRegistrationMain {
 
             case 7 :
                 UserRegistration.validPasswordRule3();
+                break;
+
+            case 8 :
+                UserRegistration.validPasswordRule4();
                 break;
 
             default:
