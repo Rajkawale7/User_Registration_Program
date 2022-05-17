@@ -4,6 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class UserRegistration {
     static Scanner sc = new Scanner(System.in);
+    //For user's First name
     public static boolean validFirstName() {
         System.out.println("Enter first name: ");
         String fName = sc.next();
@@ -20,6 +21,7 @@ public class UserRegistration {
         return r;
     }
 
+    //For user's last name
     public static void validLastName() {
 
         System.out.println("Enter last name: ");
@@ -36,6 +38,7 @@ public class UserRegistration {
             System.out.println("It is invalid last name.");
     }
 
+    //For user's Email Address
     public static void validEmail() {
         System.out.println("Enter your Email: ");
         String email = sc.next();
@@ -48,5 +51,21 @@ public class UserRegistration {
             System.out.println("It is a valid Email.");
         else
             System.out.println("It is invalid Email.");
+    }
+
+    //For user's Mobile Number
+    public static void validMobileNumber() {
+        System.out.println("Enter your mobile number: ");
+        String mobileNo = sc.next();
+        String regex3 = "^[0-9]{2}\\s{0,1}[0-9]{10}$";
+
+        Pattern pattern3 = Pattern.compile(regex3);
+        Matcher matcher3 = pattern3.matcher(mobileNo);
+        boolean r = matcher3.matches();
+
+        if (r)
+            System.out.println("Mobile Number is valid.");
+        else
+            System.out.println("Mobile Number is not valid.");
     }
 }
