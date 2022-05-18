@@ -152,4 +152,50 @@ public class UserRegistration {
         String Email6 = "RAJ712@GMAIL.COM";
         System.out.println(Pattern.compile(regex).matcher(Email6).matches());
     }
+
+    //***Methods For Test cases***//
+    //Method for first test case on User's first name.
+    public boolean validFirstName(String fName) {
+        String regex1 = "^[A-Z]{1}[a-z]*";
+        Pattern pattern1 = Pattern.compile(regex1);
+        Matcher matcher1 = pattern1.matcher(fName);
+        boolean r1 = matcher1.matches();
+        return r1;
+    }
+
+    //Method for first test case on User's Last name.
+    public boolean validateLastName(String lName) {
+        String regex2 = "^[A-Z]{1}[a-z]*";
+        Pattern pattern2 = Pattern.compile(regex2);
+        Matcher matcher2 = pattern2.matcher(lName);
+        boolean r2 = matcher2.matches();
+        return r2;
+    }
+
+    //Method for first test case on User's EmailId.
+    public boolean validateEmail(String email) {
+        String regex3 = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+";
+        Pattern pattern3 = Pattern.compile(regex3);
+        Matcher matcher3 = pattern3.matcher(email);
+        boolean r3 = matcher3.matches();
+        return r3;
+    }
+
+    //Method for first test case on User's Mobile Number.
+    public boolean validateMobileNumber(String mobileNo) {
+        String regex4 = "(0|91)?[7-9][0-9]{9}";
+        Pattern pattern4 = Pattern.compile(regex4);
+        Matcher matcher4 = pattern4.matcher(mobileNo);
+        boolean r4 = matcher4.matches();
+        return r4;
+    }
+
+    //Method for first test case on User's Password.
+    public boolean validatePassword(String userPassword) {
+        String regex5 = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z0-9@$!%*?&]{5,}$";
+        Pattern pattern5 = Pattern.compile(regex5);
+        Matcher matcher5 = pattern5.matcher(userPassword);
+        boolean b5 = matcher5.matches();
+        return b5;
+    }
 }
