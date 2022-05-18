@@ -13,6 +13,7 @@ public class UserRegistrationMain {
         System.out.println("Enter 6 : to validate User Password as per given Rule 2 ");
         System.out.println("Enter 7 : to validate User Password as per given Rule 3 ");
         System.out.println("Enter 8 : to validate User Password as per given Rule 4 ");
+        System.out.println("Enter 9 : to check some valid email samples ");
 
         switch (scanner.nextInt()) {
             case 1:
@@ -43,6 +44,10 @@ public class UserRegistrationMain {
 
             case 8 :
                 UserRegistration.validPasswordRule4();
+                break;
+
+            case 9 :
+                UserRegistration.validEmailSamples();
                 break;
 
             default:

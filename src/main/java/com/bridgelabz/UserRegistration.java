@@ -102,7 +102,7 @@ public class UserRegistration {
     public static void validPasswordRule3(){
         System.out.println("Enter The Password At least one Upper case and one numeric");
         String password = sc.nextLine();
-        String regex6 = "^[A-Z]{1}+[a-zA-Z]{6}+[0-9]+{1,}$";
+        String regex6 = "^[A-Z]{1}+[a-zA-Z]{6}+[0-9]{1,}$";
         Pattern pattern6 = Pattern.compile(regex6);
         Matcher matcher6 = pattern6.matcher(password);
         boolean r = matcher6.matches();
@@ -127,5 +127,29 @@ public class UserRegistration {
             System.out.println("It is a valid Password.");
         else
             System.out.println("It is invalid Password.");
+    }
+
+    //User case UC-9
+    //Regex to check some valid Email Samples
+    public static void validEmailSamples() {
+        String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
+
+        String Email1 = "Rajkawal00@gmail.com";
+        System.out.println(Pattern.compile(regex).matcher(Email1).matches());
+
+        String Email2 = "rajkawale@gmail.com";
+        System.out.println(Pattern.compile(regex).matcher(Email2).matches());
+
+        String Email3 = "raj_kawale@gmail.com";
+        System.out.println(Pattern.compile(regex).matcher(Email3).matches());
+
+        String Email4 = "712@gmail.com";
+        System.out.println(Pattern.compile(regex).matcher(Email4).matches());
+
+        String Email5 = "712@gmail.";
+        System.out.println(Pattern.compile(regex).matcher(Email5).matches());
+
+        String Email6 = "RAJ712@GMAIL.COM";
+        System.out.println(Pattern.compile(regex).matcher(Email6).matches());
     }
 }
