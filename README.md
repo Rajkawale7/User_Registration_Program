@@ -1,5 +1,5 @@
 # User_Registration_Program
-"User Registration Program" by using Junit, Regeular expression, Exception Handling.
+"User Registration Program" by using Regeular expression, Junit, Exception Handling.
 
 ****Welcome to the User Registration Program*****
 --------------------------------------------------------------------------------
@@ -23,4 +23,6 @@ Password/Rules No.3 = It Has exactly 1 Special Character.
 UC6 ::: In this program, There are some valid email samples for users.
 
 -------------------------------------------------------------------------------------
+**Test Cases By Using J-Unit***
+
 
