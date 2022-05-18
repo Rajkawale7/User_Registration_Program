@@ -4,21 +4,21 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class UserRegistration {
     static Scanner sc = new Scanner(System.in);
+
     //For user's First name
-    public static boolean validFirstName() {
+    public static void validateFirstName() {
+
         System.out.println("Enter first name: ");
         String fName = sc.next();
         String regex = "^[A-Z]{1}[a-z]*";
-
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(fName);
         boolean r = matcher.matches();
 
         if (r)
-            System.out.println("First name is valid.");
+            System.out.println("It is a valid first name.");
         else
-            System.out.println("First name is Invalid.");
-        return r;
+            System.out.println("It is invalid first name.");
     }
 
     //For user's last name
@@ -26,8 +26,7 @@ public class UserRegistration {
 
         System.out.println("Enter last name: ");
         String lName = sc.next();
-        String regex1 = "^[A-Z]{1}[a-z]{2,}$";
-
+        String regex1 = "^[A-Z]{1}[a-z]*";
         Pattern pattern1 = Pattern.compile(regex1);
         Matcher matcher1 = pattern1.matcher(lName);
         boolean r = matcher1.matches();
@@ -195,7 +194,64 @@ public class UserRegistration {
         String regex5 = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z0-9@$!%*?&]{5,}$";
         Pattern pattern5 = Pattern.compile(regex5);
         Matcher matcher5 = pattern5.matcher(userPassword);
-        boolean b5 = matcher5.matches();
-        return b5;
+        boolean r5 = matcher5.matches();
+        return r5;
+    }
+
+    //***   Methods For Exception Handling cases   ***//
+    //Method for Handling first Exception case on User's first name
+
+    private static final String regex = "^[A-Z]{1}[a-z]*";
+    public boolean validateFirstName(String fName) throws UserRegistrationException {
+        Pattern pattern = Pattern.compile(regex);
+        if (Pattern.matches(regex, fName) == true)
+            return Pattern.matches(regex, fName);
+        else {
+            throw new UserRegistrationException("Please, Enter valid First Name");
+        }
+    }
+
+    //Method for Handling Second Exception case on User's Last name
+    private static final String regex2 = "^[A-Z]{1}[a-z]*";
+    public boolean validatelastName(String lName) throws UserRegistrationException {
+        Pattern pattern = Pattern.compile(regex2);
+        if (Pattern.matches(regex2, lName) == true)
+            return Pattern.matches(regex2, lName);
+        else {
+            throw new UserRegistrationException("Please, Enter valid Last Name");
+        }
+    }
+
+    //Method for Handling Third Exception case on User's Email format
+    private static final String regex3 = "^[a-zA-Z0-9]+([.][A-Za-z]+)*@[a-zA-Z]+[.]+[a-zA-Z]{2,3}+([.][A-Za-z]+)*$";
+    public boolean validateEmailID(String email) throws UserRegistrationException {
+        Pattern pattern = Pattern.compile(regex3);
+        if (Pattern.matches(regex3, email) == true)
+            return Pattern.matches(regex3, email);
+        else {
+            throw new UserRegistrationException("Please, Enter valid Email ID");
+        }
+    }
+
+    //Method for Handling Fourth Exception case on User's Mobile Number.
+    private static final String regex4 = "(91|0)?\\s?[6-9][0-9]{9}$";
+    public boolean validateMobileNo(String mobileNo) throws UserRegistrationException {
+        Pattern pattern = Pattern.compile(regex4);
+        if (Pattern.matches(regex4, mobileNo) == true)
+            return Pattern.matches(regex4, mobileNo);
+        else {
+            throw new UserRegistrationException("Please, Enter valid mobile number");
+        }
+    }
+
+    //Method for Handling Fourth Exception case on User's Mobile Number.
+    private static final String regex5 = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z0-9@$!%*?&]{5,}$";
+    public boolean validatePasswordRule4(String password) throws UserRegistrationException {
+        Pattern pattern = Pattern.compile(regex5);
+        if (Pattern.matches(regex5, password) == true)
+            return Pattern.matches(regex5, password);
+        else {
+            throw new UserRegistrationException("Please Enter valid password as per given rules" );
+        }
     }
 }

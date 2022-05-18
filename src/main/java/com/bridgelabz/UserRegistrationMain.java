@@ -17,7 +17,7 @@ public class UserRegistrationMain {
 
         switch (scanner.nextInt()) {
             case 1:
-                UserRegistration.validFirstName();
+                UserRegistration.validateFirstName();
                 break;
             case 2:
                 UserRegistration.validLastName();
